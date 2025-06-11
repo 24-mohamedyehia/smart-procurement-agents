@@ -38,6 +38,15 @@
                 <label for="topRecommendationsNo" class="form-label">Number of top recommendations:</label>
                 <input class="form-control" type="number" id="topRecommendationsNo" name="top_recommendations_no" min="1" max="10" placeholder="Example: 2" required>
             </div>
+            <!-- language -->
+            <div class="mb-3">
+                <label for="language" class="form-label">Language:</label>
+                <select class="form-select" id="language" name="language" required>
+                    <option value="">Select Language</option>
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                </select>
+            </div>
             <div class="d-flex justify-content-center my-4">
                 <button type="submit" class="btn btn-primary me-2 m-3">Search</button>
             </div>

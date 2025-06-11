@@ -24,6 +24,7 @@ def index():
         # Get form fields
         product_name = request.form.get('product_name')
         top_recommendations_no = request.form.get('top_recommendations_no')
+        language = request.form.get('language')
 
         try:
             # Prepare input for procurement_crew
@@ -34,7 +35,7 @@ def index():
                 'product_name': product_name,
                 'no_keywords': 3,
                 'websites_list': ['www.amazon.eg', 'www.jumia.com.eg', 'www.noon.com/egypt-en'],
-                'language': 'English',
+                'language': language,
                 'score_th': 0.5,
                 'top_recommendations_no': int(top_recommendations_no),
                 'country_name': 'Egypt',

@@ -23,6 +23,7 @@ procurement_report_task = Task(
         "Use the provided context about the company to make a specialized report.",
         "The report will include the search results and prices of products from different websites.",
         "The report should be structured with the following sections:",
+        "the report should be with writen in {language} language.",
         "1. Executive Summary: A brief overview of the procurement process and key findings.",
         "2. Introduction: An introduction to the purpose and scope of the report.",
         "3. Methodology: A description of the methods used to gather and compare prices.",
