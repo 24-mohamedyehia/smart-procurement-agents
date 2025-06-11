@@ -2,7 +2,7 @@
 This is a smart procurement agents that can help you to find the best product for your company. and generate a report for you.
 
 ## Screenshots
-![image](./public/image.png)
+![image](./public/img.png)
 
 ## Features
 - Find the best product for your company
