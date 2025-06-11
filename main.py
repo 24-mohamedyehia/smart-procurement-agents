@@ -7,10 +7,9 @@ from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSourc
 import agentops
 from crewai import Crew, Process
 import os
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
-
+import time
 from dotenv import load_dotenv
+
 load_dotenv()
 agentops_api_key = os.getenv("Agentops_API_KEY")
 
@@ -25,7 +24,7 @@ company_context = StringKnowledgeSource(
             """
 )
 
-no_keywords = 5
+no_keywords = 3
 
 output_dir = './src/ai-agent-output'
 os.makedirs(output_dir, exist_ok=True)
@@ -33,19 +32,20 @@ os.makedirs(output_dir, exist_ok=True)
 
 procurement_crew = Crew(
     agents=[
-        search_queries_recommendation,
-        search_engine,
-        scraper,
+        # search_queries_recommendation,
+        # search_engine,
+        # scraper,
         procurement_report
     ],
     tasks=[
-        search_queries_recommendation_task,
-        search_engine_task,
-        scraping_task,
+        # search_queries_recommendation_task,
+        # search_engine_task,
+        # scraping_task,
         procurement_report_task
     ],  
     process=Process.sequential,
-    knowledge_sources=[company_context]
+    knowledge_sources=[company_context],
+    verbose=True,
 )
 
 crew_results = procurement_crew.kickoff(
@@ -55,11 +55,13 @@ crew_results = procurement_crew.kickoff(
         'country_name': 'Egypt',
         'no_keywords': no_keywords,
         'language': 'English',
-        'score_th': 0.1,
+        'score_th': 0.5,
         'search_results': os.path.join(output_dir, 'step_2_search_results.json'),
-        'top_recommendations_no': 10,
+        'top_recommendations_no': 2,
         'products_file': os.path.join(output_dir, 'step_3_products_file.json')
     }
 )
 
-clean_report('/src/ai-agent-output/step_4_procurement_report.html')
+time.sleep(3.0)  # Wait for the report to be generated
+
+clean_report(os.path.join(output_dir, "step_4_procurement_report.html"))
