@@ -1,6 +1,6 @@
 
 # clean the final output
-def clean_report(file_path):
+def clean_report(file_path: str):
     """
     Clean the final output HTML file by removing the first and last lines.
     """
