@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart Procurement Agents</title>
+        <link rel="stylesheet" href="./static/css/bootstrap.css">
+        <link rel="stylesheet" href="./static/css/main.css">
+    </head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand">Smart Procurement Agents</a>
+            <a href="https://github.com/24-mohamedyehia/smart-procurement-agents" target="_blank" class="d-flex align-items-center text-black text-decoration-none">
+                <span>Source Code</span>
+                <img src="../static/img/github-logo.png" alt="GitHub" width="30" class="ms-4">
+            </a>
+            
+        </div>
+    </nav>
+
+    <!-- Project Name -->
+    <div class="container project-name my-3 mb-0 pb-0 ">
+        <h2 class="text-center my-3 text-primary">Smart Procurement Agents</h2>
+        <p class="text-center">Find the best product for your company with a single click! 👆<i></i></p>
+    </div>
+
+    <br>
+    <!-- Prediction Form -->
+    <div class="container my-1">
+        <form id="procurementForm" action="/" method="post">
+            <div class="mb-3">
+                <label for="productName" class="form-label">Product Name:</label>
+                <input class="form-control" type="text" id="productName" name="product_name" placeholder="Example: HP Laptop" required>
+            </div>
+            <div class="mb-3">
+                <label for="topRecommendationsNo" class="form-label">Number of top recommendations:</label>
+                <input class="form-control" type="number" id="topRecommendationsNo" name="top_recommendations_no" min="1" max="10" placeholder="Example: 2" required>
+            </div>
+            <div class="d-flex justify-content-center my-4">
+                <button type="submit" class="btn btn-primary me-2 m-3">Search</button>
+            </div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-warning">
+          {% for message in messages %}
+            <div>{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+</form>
+    </div>
+
+
+
+    <!-- Footer Section with White Background -->
+    <footer class="footer text-center bg-light text-dark pb-2 bt-0">
+    </footer>
+    <script src="./static/js/bootstrap.js"></script>
+    <script src="./static/js/jquery-3.7.1.min.js"></script>
+    <script src="./static/js/popper.min.js"></script>
+    <script src="./static/js/main.js"></script>
+</body>
+</html>

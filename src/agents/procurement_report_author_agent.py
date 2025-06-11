@@ -30,7 +30,6 @@ procurement_report_task = Task(
         "5. Analysis: An analysis of the findings, highlighting any significant trends or observations.",
         "6. Recommendations: Suggestions for procurement based on the analysis.",
         "7. Conclusion: A summary of the report and final thoughts.",
-        "8. Appendices: Any additional information, such as raw data or supplementary materials.",
     ]),
 
     expected_output="A professional HTML page for the procurement report.",
