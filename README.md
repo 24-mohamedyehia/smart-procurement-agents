@@ -1,6 +1,13 @@
 # smart-procurement-agents
 This is a smart procurement agents that can help you to find the best product for your company. and generate a report for you.
 
+## Screenshots
+![image](./public/image.png)
+
+## Features
+- Find the best product for your company
+- Generate a report for you 
+
 ## Requirements
 - Python 3.11
 
@@ -37,10 +44,15 @@ You can get your Open Router API key from [here](https://openrouter.ai/settings/
 You can get your Agentops API key from [here](https://agentops.com/).
 You can get your TVLY_SEARCH_API_KEY from [here](https://tavily.ai/).
 
+## Run the application:
+```bash
+$ python app.py
+```
 
-## Features
-- Find the best product for your company
-- Generate a report for you 
+## Access the application
+Open your browser and navigate to `http://127.0.0.1:5000`.
+
+To stop the application, press `Ctrl+C` in your terminal.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
