@@ -1,6 +1,6 @@
 import os
 from crewai import Agent , Task
-from src.providers import ollama_llm
+from src.providers import mistral_small
 from src.models import SuggestedSearchQueries
 
 output_dir = '/src/ai-agent-output'
@@ -14,7 +14,7 @@ search_queries_recommendation = Agent(
         "provid the best suggested search queries with details"
         "- Restrict to specific sites: use site: keyword for search",
     ]),
-    llm=ollama_llm,
+    llm=mistral_small,
     verbose=True
 )
 
