@@ -1,6 +1,6 @@
 from crewai import Agent, Task
 import os 
-from src.providers import ollama_llm 
+from src.providers import deepseek_v3 
 from src.tools import read_json
 
 output_dir = './src/ai-agent-output'
@@ -10,7 +10,7 @@ procurement_report = Agent(
     role="Procurement Report Author Agent",
     goal="To generate a professional HTML page for the procurement report",
     backstory="The agent is designed to assist in generating a professional HTML page for the procurement report after looking into a list of products.",
-    llm=ollama_llm,
+    llm=deepseek_v3,
     verbose=True,
     tools=[read_json]
 )

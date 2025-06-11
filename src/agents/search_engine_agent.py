@@ -1,6 +1,6 @@
 import os
 from crewai import Agent , Task
-from src.providers import ollama_llm
+from src.providers import mistral_small
 from src.models import AllSearchResults
 from src.tools import search_engine_tool 
 
@@ -13,7 +13,7 @@ search_engine = Agent(
     backstory=(
         "The agent is designed to help in looking for products by searching for products based on the suggested search queries."
     ),
-    llm=ollama_llm, 
+    llm=mistral_small,
     tools=[search_engine_tool],
     verbose=True
 )
