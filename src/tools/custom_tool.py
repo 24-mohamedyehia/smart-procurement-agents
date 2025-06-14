@@ -18,7 +18,6 @@ def read_json(file_path: str):
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except UnicodeDecodeError:
-        # جرب ترميز تاني لو utf-8 فشل
         with open(file_path, 'r', encoding='latin1') as f:
             return json.load(f)
 
